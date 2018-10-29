@@ -90,5 +90,10 @@ namespace People
 
             MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void buttonSort_Click(object sender, EventArgs e)
+        {
+            birthdays.Sort();
+        }
     }
 }

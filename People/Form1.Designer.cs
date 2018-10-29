@@ -44,12 +44,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.buttonSort = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDays)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonPrevious
             // 
-            this.buttonPrevious.Location = new System.Drawing.Point(59, 291);
+            this.buttonPrevious.Location = new System.Drawing.Point(102, 309);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(75, 23);
             this.buttonPrevious.TabIndex = 0;
@@ -59,7 +60,7 @@
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(243, 291);
+            this.buttonNext.Location = new System.Drawing.Point(286, 309);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(75, 23);
             this.buttonNext.TabIndex = 1;
@@ -84,7 +85,7 @@
             // textBoxDateOfBirth
             // 
             this.textBoxDateOfBirth.Location = new System.Drawing.Point(102, 86);
-            this.textBoxDateOfBirth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxDateOfBirth.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxDateOfBirth.Name = "textBoxDateOfBirth";
             this.textBoxDateOfBirth.Size = new System.Drawing.Size(259, 20);
             this.textBoxDateOfBirth.TabIndex = 4;
@@ -92,7 +93,7 @@
             // textBoxDaysToBirthday
             // 
             this.textBoxDaysToBirthday.Location = new System.Drawing.Point(102, 141);
-            this.textBoxDaysToBirthday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxDaysToBirthday.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxDaysToBirthday.Name = "textBoxDaysToBirthday";
             this.textBoxDaysToBirthday.Size = new System.Drawing.Size(259, 20);
             this.textBoxDaysToBirthday.TabIndex = 5;
@@ -100,7 +101,7 @@
             // textBoxAgeInYears
             // 
             this.textBoxAgeInYears.Location = new System.Drawing.Point(102, 164);
-            this.textBoxAgeInYears.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxAgeInYears.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxAgeInYears.Name = "textBoxAgeInYears";
             this.textBoxAgeInYears.Size = new System.Drawing.Size(259, 20);
             this.textBoxAgeInYears.TabIndex = 6;
@@ -200,11 +201,22 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "Age";
             // 
+            // buttonSort
+            // 
+            this.buttonSort.Location = new System.Drawing.Point(66, 254);
+            this.buttonSort.Name = "buttonSort";
+            this.buttonSort.Size = new System.Drawing.Size(75, 23);
+            this.buttonSort.TabIndex = 16;
+            this.buttonSort.Text = "Sort";
+            this.buttonSort.UseVisualStyleBackColor = true;
+            this.buttonSort.Click += new System.EventHandler(this.buttonSort_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 355);
+            this.Controls.Add(this.buttonSort);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -248,6 +260,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button buttonSort;
     }
 }
 

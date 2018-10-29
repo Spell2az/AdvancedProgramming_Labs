@@ -65,7 +65,15 @@ namespace People
                             .Where(person => person.HowManyDaysTillBirthday() <= days)
                             .Select(person => $"{person.FirstName} {person.LastName} {person.DateOfBirth()}");
            
-            return String.Join(Environment.NewLine, names);
+            return string.Join(Environment.NewLine, names);
         }
+
+        public string CovertListToStrings(List<Person> sourceList)
+        {
+            var peopleNames = sourceList.Select(person => $"{person.FirstName} {person.LastName}");
+            return string.Join(Environment.NewLine, peopleNames);
+        }
+
+        public void Sort() => people.Sort();
     }
 }

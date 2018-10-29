@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace People
 {
-    public class Person
+    public class Person : IComparable
     {
         // attributes for this class
 
@@ -152,7 +152,39 @@ namespace People
         }
 
 
+        public bool IsOlderThan(Person otherPerson)
+        {
+            return GetAgeSpan() > otherPerson.GetAgeSpan();
+        }
 
+        public bool IsSameAgeAs(Person otherPerson)
+        {
+            return GetAgeSpan() == otherPerson.GetAgeSpan();
+        }
+
+        private TimeSpan GetAgeSpan()
+        {
+            DateTime dateOfBirth = new DateTime(yearBorn, monthBorn, dayBorn);
+            return dateOfBirth - DateTime.Now;
+        }
+
+        public int CompareTo(object obj)
+        {
+            Person otherPerson = (Person) obj;
+
+            if (IsOlderThan(otherPerson))
+            {
+                return 1;
+            }
+            else if (IsSameAgeAs(otherPerson))
+            {
+                return 0;
+            }
+            else
+            {
+                return -1;
+            }
+        }
     }
 }
 
