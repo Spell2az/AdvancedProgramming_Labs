@@ -10,31 +10,62 @@ namespace People
     {
         // attributes for this class
 
-        public string firstName;
-        public string lastName;
-        public int dayBorn;
-        public int monthBorn;
-        public int yearBorn;
+        private string firstName;
+        private string lastName;
+        private int dayBorn;
+        private int monthBorn;
+        private int yearBorn;
 
+        public string FirstName
+        {
+            get { return firstName; }
+            set { FirstName = value; }
+        }
 
+        public string LastName
+        {
+            get { return lastName; }
+            set { lastName = value; }
+        }
+
+        public int DayBorn
+        {
+            get { return dayBorn; }
+            set { dayBorn = value; }
+        }
+
+        public int MonthBorn
+        {
+            get { return monthBorn; }
+            set { monthBorn = value; }
+        }
+
+        public int YearBorn
+        {
+            get { return yearBorn; }
+            set { yearBorn = value; }
+        }
+
+        public Person()
+        {
+            
+        }
+
+        public Person(string firstName, string lastName, int dayBorn, int monthBorn, int yearBorn)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.dayBorn = dayBorn;
+            this.monthBorn = monthBorn;
+            this.yearBorn = yearBorn;
+        }
 
         // helper method - return date of birth as a string
 
         public string DateOfBirth()
         {
-            return string.Format("{0}/{1}/{2}", dayBorn, monthBorn, yearBorn);
+            return string.Format("{0}/{1}/{2}", DayBorn, MonthBorn, YearBorn);
         }
-
-        
-
-
-
-
-
-
-
-
-
 
 
         // these 3 methods implement an algorithm to
@@ -49,15 +80,15 @@ namespace People
             bool returnValue = false;
 
             // but if this month is AFTER you birthay month you have
-            if (today.Month > monthBorn)
+            if (today.Month > MonthBorn)
             {
                 returnValue = true;
             }
             // if this is your birthday month we look at the days            
-            else if (today.Month == monthBorn)
+            else if (today.Month == MonthBorn)
             {
                 // if today is on or after your birthday then you have
-                if (today.Day >= dayBorn)
+                if (today.Day >= DayBorn)
                 {
                     returnValue = true;
                 }
@@ -81,7 +112,7 @@ namespace People
             }
             // now we create the right dateTime
             DateTime nextBirthday =
-                new DateTime(birthdayYear, monthBorn, dayBorn);
+                new DateTime(birthdayYear, MonthBorn, DayBorn);
             return nextBirthday;
         }
 
@@ -108,7 +139,7 @@ namespace People
         public int GetAgeInYears()
         {
             DateTime today = DateTime.Today;
-            int age = today.Year - yearBorn;
+            int age = today.Year - YearBorn;
 
             // but if you haven't had this years birthday
             // you are 1 year younger

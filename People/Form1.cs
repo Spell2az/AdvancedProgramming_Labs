@@ -76,5 +76,19 @@ namespace People
             textBoxDaysToBirthday.Text = string.Format("{0} Days", birthdays.GetPersonsDaysTillNextBirthday());
             textBoxAgeInYears.Text = string.Format("{0} Years old", birthdays.GetPersonsAgeInYears());
         }
+
+        private void buttonFind_Click(object sender, EventArgs e)
+        {
+            int days = (int) numericUpDownDays.Value;
+
+            string caption = $"Birthday in next {days} days";
+            string message = birthdays.UpcomingBirthdays(days);
+            if (string.IsNullOrEmpty(message))
+            {
+                message = "No birthdays found";
+            }
+
+            MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

@@ -16,31 +16,27 @@ namespace People
         int currentPerson = 0;
 
 
-
         //we need access to a persons data
 
         public string GetPersonsFirstName()
         {
-            return people[currentPerson].firstName;
+            return people[currentPerson].FirstName;
         }
 
         public string GetPersonsLastName()
         {
-            return people[currentPerson].lastName;
+            return people[currentPerson].LastName;
         }
-
 
         public string GetPersonsDateOfBirth()
         {
             return people[currentPerson].DateOfBirth();            
         }
 
-
         public int GetPersonsDaysTillNextBirthday()
         {
             return people[currentPerson].HowManyDaysTillBirthday();
         }
-
 
         // added for extension task
         public int GetPersonsAgeInYears()
@@ -48,64 +44,28 @@ namespace People
             return people[currentPerson].GetAgeInYears();
         }
 
-
-        public bool IsNextPerson()
-        {
-            if (currentPerson < (people.Count - 1))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-            // we could just write
-            //return (currentPerson < (people.Count - 1));
-        }
-        
-        public bool IsPreviousPerson()
-        {
-            if (currentPerson > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-            // again we could write
-            // return (currentPerson > 0);
-        }
-
-
         public void StepToNextPerson()
         {
-            if (IsNextPerson())
-            {
-                currentPerson++;
-            }
+            currentPerson = currentPerson == (people.Count - 1) ? 0 : currentPerson + 1;
         }
 
         public void StepToPreviousPerson()
         {
-            if (IsPreviousPerson())
-            {
-                currentPerson--;
-            }
+            currentPerson = currentPerson == 0 ? people.Count -1 : currentPerson - 1;
         }
 
         public void AddPerson(string firstName, string lastName, int dayBorn, int monthBorn, int yearBorn)
         {
-            // create a new person object
-            Person person = new Person();
-            // copy in tyhe details
-            person.firstName = firstName;
-            person.lastName = lastName;
-            person.dayBorn = dayBorn;
-            person.monthBorn = monthBorn;
-            person.yearBorn = yearBorn;
-            // add to the list of people
-            people.Add(person);
+            people.Add(new Person(firstName, lastName, dayBorn, monthBorn, yearBorn));
+        }
+
+        public string UpcomingBirthdays(int days)
+        {
+            var names = people
+                            .Where(person => person.HowManyDaysTillBirthday() <= days)
+                            .Select(person => $"{person.FirstName} {person.LastName} {person.DateOfBirth()}");
+           
+            return String.Join(Environment.NewLine, names);
         }
     }
 }
