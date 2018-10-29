@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "People", "People\People.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndependentTask3", "IndependentTask3\IndependentTask3.csproj", "{C6C41B4C-4FC3-400B-9E73-A1ECD50D2B46}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitalClock", "DigitalClock\DigitalClock.csproj", "{5F3E3E5F-5F17-4090-8DD1-35EADAF11CC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,14 @@ Global
 		{C6C41B4C-4FC3-400B-9E73-A1ECD50D2B46}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C6C41B4C-4FC3-400B-9E73-A1ECD50D2B46}.Release|x86.ActiveCfg = Release|Any CPU
 		{C6C41B4C-4FC3-400B-9E73-A1ECD50D2B46}.Release|x86.Build.0 = Release|Any CPU
+		{5F3E3E5F-5F17-4090-8DD1-35EADAF11CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F3E3E5F-5F17-4090-8DD1-35EADAF11CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F3E3E5F-5F17-4090-8DD1-35EADAF11CC6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5F3E3E5F-5F17-4090-8DD1-35EADAF11CC6}.Debug|x86.Build.0 = Debug|Any CPU
+		{5F3E3E5F-5F17-4090-8DD1-35EADAF11CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F3E3E5F-5F17-4090-8DD1-35EADAF11CC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F3E3E5F-5F17-4090-8DD1-35EADAF11CC6}.Release|x86.ActiveCfg = Release|Any CPU
+		{5F3E3E5F-5F17-4090-8DD1-35EADAF11CC6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
